@@ -40,7 +40,7 @@ const job = new cron.CronJob("0 */30 * * * *", async function () {
       link: "http://feeds.feedburner.com/TechCrunch/",
       pubId: 4,
     },
-    { name: "CNET", link: "https://www.cnet.com/rss/all/", pubId: 5 },
+    { name: "CNET", link: "https://www.cnet.com/rss/news/", pubId: 5 },
     {
       name: "The Next Web",
       link: "http://feeds2.feedburner.com/thenextweb",
