@@ -13,10 +13,10 @@ const scraperService = require("./scraper.service");
  * @returns - No return - triggers rss parser service
  */
 
-// console.log('Before cron job instantiation');
-const job = new cron.CronJob("0 */10 * * * *", async function () {
+// run every 30 min
+const job = new cron.CronJob("0 */30 * * * *", async function () {
   const d = new Date();
-  console.log("Every Fifth Minute:", d);
+  console.log("Starting cron at:", d);
 
   let sources = [
     {
@@ -46,18 +46,7 @@ const job = new cron.CronJob("0 */10 * * * *", async function () {
       link: "http://feeds2.feedburner.com/thenextweb",
       pubId: 6,
     },
-    // {
-    //   name: "Hacker Noon",
-    //   link: "https://hackernoon.com/feed?ref=hackernoon.com",
-    // },
   ];
-
-  //   let url = "https://www.digitaltrends.com/feed/";
-  //   let url2 = "http://feeds.arstechnica.com/arstechnica/index";
-  //   let url3 = "https://www.theverge.com/rss/index.xml";
-  //   let url4 = "https://www.wired.com/feed/rss";
-
-  //   let feedLinks = [url, url2, url3, url4];
 
   for (source of sources) {
     let link = source.link;
