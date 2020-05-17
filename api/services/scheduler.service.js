@@ -14,7 +14,7 @@ const scraperService = require("./scraper.service");
  */
 
 // console.log('Before cron job instantiation');
-const job = new cron.CronJob("0 */2 * * * *", async function () {
+const job = new cron.CronJob("0 */10 * * * *", async function () {
   const d = new Date();
   console.log("Every Fifth Minute:", d);
 
