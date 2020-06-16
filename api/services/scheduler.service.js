@@ -14,7 +14,7 @@ const scraperService = require("./scraper.service");
  */
 
 // run every 30 min
-const job = new cron.CronJob("0 */30 * * * *", async function () {
+const job = new cron.CronJob("0 * 8 * * *", async function () {
   const d = new Date();
   console.log("Starting cron at:", d);
 
